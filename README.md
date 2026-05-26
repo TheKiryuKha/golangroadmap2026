@@ -1,362 +1,471 @@
-<div align="center">
+# 🚀 Golang Roadmap 2026 — продвинутый курс на русском
 
-# 🚀 Golang Roadmap 2026
+![Go](https://img.shields.io/badge/Go-1.23%2B-00ADD8?logo=go&logoColor=white)
+![Level](https://img.shields.io/badge/Level-Junior%E2%86%92Staff-success)
+![Duration](https://img.shields.io/badge/Duration-12%E2%80%9318%20months-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Lang](https://img.shields.io/badge/Lang-Russian-red)
 
-**Полный путь от нуля до Senior / Staff Go-разработчика на русском языке**
-
-Реальные сроки · Бесплатные ресурсы · Проекты · Самопроверка
-
-![Go](https://img.shields.io/badge/Go-1.23+-00ADD8?logo=go&logoColor=white)
-![Level](https://img.shields.io/badge/Level-Junior%20→%20Staff-blueviolet)
-![Time](https://img.shields.io/badge/Time-12–18%20months-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Language](https://img.shields.io/badge/Language-Russian-red)
-
-</div>
+> **Полная программа для тех, кто хочет в 2026 году писать на Go в продакшене:** от `fmt.Println` до распределённых систем, observability, AI-агентов и масштабирования на миллионы RPS.
 
 ---
 
-## 📚 О курсе
+## 📌 О курсе
 
-Этот репозиторий — не просто roadmap, а **полноценный курс по Go из 19 модулей**, разбитый по урокам в папке [`/course`](./course).
+Это **бесплатный open-source roadmap** на русском языке. Внутри — 19 модулей, каждый со своей теорией, практикой, бесплатными ресурсами и финальным проектом. Программа собрана так, чтобы провести вас от **полного нуля до уровня Senior/Staff Go Engineer** за 12–18 месяцев при темпе 10–15 часов в неделю.
 
-Курс состоит из двух частей:
+**Главный принцип курса — практика > видосы.** Каждую тему вы закрываете кодом: пишете, ломаете, чините, рефакторите. Любой модуль завершается мини-проектом, который можно положить в портфолио.
 
-* **Основная часть (модули 0–12)** — путь от установки Go до уверенных Senior-собеседований. 10–14 месяцев при 2–3 часах в день.
-* **Продвинутая часть (модули 13–18)** — то, что отличает сильного Senior'а от Staff/Principal: runtime, distributed systems, observability, security, K8s operators, AI/ML.
+### 🎯 Кому подойдёт
+- 🐹 **Новичкам в Go** — даже если до этого писали только на Python/JS/PHP
+- 🛠 **Backend-разработчикам** с другого стека — хотите перейти на Go
+- 📈 **Junior Go-разработчикам** — нужен путь до Middle/Senior
+- 🚀 **Middle-инженерам** — закрыть пробелы в архитектуре, observability, distributed
+- 🤖 **Тем, кто хочет писать AI-инфраструктуру** — модуль 18 специально про это
 
-Каждый модуль содержит:
-
-* 🎯 **Цель** — что ты будешь уметь после модуля
-* 📚 **Теорию** — что и где читать/смотреть (книги, статьи, видео)
-* 💻 **Практику** — конкретные задания и проекты
-* ✅ **Чек-пойнт** — самопроверка перед переходом дальше
-* ⚠️ **Красные флаги** — типичные ошибки, которые тормозят рост
-
-👉 **Старт:** [Модуль 0 — Фундамент](./course/00-fundamentals.md)
+### 💡 Чем этот roadmap отличается
+1. **Свежий стек 2026** — generics, fuzzing, structured logging `slog`, OpenTelemetry, eBPF, Wasm, GenAI.
+2. **Никаких платных курсов** — только бесплатные ресурсы и официальная документация.
+3. **Проект в каждом модуле** — на выходе у вас 19 готовых пет-проектов + 3 крупных капстоуна.
+4. **Главный источник новостей по Go в Telegram** — [@Golang_google](https://t.me/Golang_google) и [папка каналов про Go](https://t.me/addlist/MUtJEeJSxeY2YTFi).
 
 ---
 
 ## 📑 Содержание
 
-* [Программа курса](#-программа-курса)
-* [Подробный разбор модулей](#-подробный-разбор-модулей)
-* [Длительность по грейдам](#️-длительность-по-грейдам)
-* [Как проходить курс](#-как-проходить-курс)
-* [Топ бесплатных ресурсов](#-топ-бесплатных-ресурсов)
-* [3 железных правила](#-3-железных-правила)
-* [FAQ](#-faq)
+- [О курсе](#-о-курсе)
+- [Программа курса](#-программа-курса)
+- [Подробный разбор модулей](#-подробный-разбор-модулей)
+- [Длительность по грейдам](#-длительность-по-грейдам)
+- [Как проходить курс](#-как-проходить-курс)
+- [Подробный план уроков](#-подробный-план-уроков-по-неделям)
+- [Топ бесплатных ресурсов](#-топ-бесплатных-ресурсов)
+- [Главный источник новостей по Go](#-главный-источник-новостей-по-go-telegram)
+- [Красные флаги — типичные ошибки](#%EF%B8%8F-красные-флаги--типичные-ошибки-которые-тормозят-рост)
+- [3 железных правила](#-3-железных-правила)
+- [FAQ](#-faq)
 
 ---
 
-## 🎓 Программа курса
+## 🗺 Программа курса
 
-### Основная часть — путь до Senior
+### Базовая часть — фундамент языка и инструментов
 
-| № | Модуль | Срок | Уровень |
-|---|--------|------|---------|
-| 0 | [Фундамент](./course/00-fundamentals.md) | 2–3 недели | 🟢 |
-| 1 | [Синтаксис и основы Go](./course/01-syntax.md) | 3–4 недели | 🟢 |
-| 2 | [Глубокий Go](./course/02-deep-go.md) | 4–6 недель | 🟡 |
-| 3 | [Конкурентность](./course/03-concurrency.md) | 3–4 недели | 🟡 |
-| 4 | [Стандартная библиотека](./course/04-stdlib.md) | 3 недели | 🟢 |
-| 5 | [Базы данных](./course/05-databases.md) | 3–4 недели | 🟡 |
-| 6 | [Web и API](./course/06-web-api.md) | 4–6 недель | 🟡 |
-| 7 | [Тестирование](./course/07-testing.md) | 2–3 недели | 🟢 |
-| 8 | [Микросервисы и сети](./course/08-microservices.md) | 6–8 недель | 🟠 |
-| 9 | [DevOps минимум](./course/09-devops.md) | 3–4 недели | 🟠 |
-| 10 | [Архитектура и паттерны](./course/10-architecture.md) | 4–6 недель | 🔴 |
-| 11 | [Performance и production](./course/11-performance.md) | 3–4 недели | 🔴 |
-| 12 | [Подготовка к собеседованиям](./course/12-interview.md) | 3 недели | 🟣 |
+| № | Модуль | Что внутри | Время |
+|---|--------|-----------|-------|
+| 00 | **Fundamentals** | Синтаксис, типы, управляющие конструкции, slices, maps, структуры, методы, интерфейсы, ошибки | 3–4 нед |
+| 01 | **Tooling & Modules** | `go mod`, `go work`, линтеры, форматтеры, Makefile, Task, CI | 1 нед |
+| 02 | **Concurrency** | Горутины, каналы, `select`, `sync`, `context`, race detector, паттерны | 3–4 нед |
+| 03 | **Standard Library** | `io`, `os`, `net/http`, `encoding/json`, `time`, `bufio`, `errors`, `slog` | 2–3 нед |
+| 04 | **Testing** | Unit, table-driven, fuzzing, benchmarking, моки, integration, testcontainers | 2 нед |
+| 05 | **Web & API** | net/http, chi, gin, echo, REST, OpenAPI, валидация, middleware | 3 нед |
+| 06 | **Databases** | SQL (PostgreSQL), pgx, sqlc, миграции (goose, atlas), Redis, транзакции | 3 нед |
+| 07 | **gRPC & Protobuf** | Protobuf, кодогенерация, streaming, gRPC-Gateway, buf, gRPC reflection | 2 нед |
+| 08 | **Architecture** | Clean / Hexagonal / Vertical Slice, DDD-lite, DI без магии (wire/fx) | 3 нед |
 
-### Продвинутая часть — от Senior к Staff/Principal
+### Продвинутая часть — production-ready инженерия
 
-| № | Модуль | Срок | Уровень |
-|---|--------|------|---------|
-| 13 | [Go Runtime & Internals](./course/13-runtime-internals.md) | 4–6 недель | 🔴 |
-| 14 | [Distributed Systems](./course/14-distributed-systems.md) | 6–8 недель | 🔴 |
-| 15 | [Observability & SRE](./course/15-observability.md) | 3–4 недели | 🔴 |
-| 16 | [Security в Go](./course/16-security.md) | 3–4 недели | 🔴 |
-| 17 | [Cloud Native & K8s Operators](./course/17-cloud-native.md) | 4–6 недель | 🔴 |
-| 18 | [AI/ML & Data Engineering на Go](./course/18-ai-data.md) | 3–4 недели | 🔴 |
-
-> Продвинутая часть не обязана идти строго по порядку. Выбирай модули под свой контекст: Senior backend — 13/14/15, platform engineer — 15/16/17, ML-инфра — 14/15/18.
+| № | Модуль | Что внутри | Время |
+|---|--------|-----------|-------|
+| 09 | **Observability** | OpenTelemetry, Prometheus, Grafana, slog, traces, metrics, logs, profiling (pprof) | 2 нед |
+| 10 | **Performance** | pprof, escape analysis, GC, бенчмарки, lock-free, sync.Pool, оптимизации памяти | 3 нед |
+| 11 | **Security** | OWASP Top 10 для Go, JWT, OAuth2, TLS, secrets management, supply chain (govulncheck) | 2 нед |
+| 12 | **Cloud & DevOps** | Docker, Kubernetes, Helm, ArgoCD, IaC (Terraform), GitOps, observability в k8s | 4 нед |
+| 13 | **Messaging** | Kafka, NATS, RabbitMQ, outbox pattern, idempotency, sagas | 3 нед |
+| 14 | **Distributed Systems** | CAP, consensus (Raft), event sourcing, CQRS, distributed locks, leader election | 4 нед |
+| 15 | **Microservices** | service mesh (Istio/Linkerd), API gateway, circuit breaker, bulkhead, retries | 3 нед |
+| 16 | **System Design** | Проектирование Twitter/Uber/WhatsApp на Go, capacity planning, шардирование, кэширование | 4 нед |
+| 17 | **Advanced Topics** | eBPF, Wasm (`tinygo`), unsafe, plugin, cgo, FFI, Go internals (runtime, scheduler) | 3 нед |
+| 18 | **AI & Data Engineering** | LLM-агенты на Go, vector DB, RAG, Ollama, langchaingo, потоковая обработка | 3 нед |
 
 ---
 
-## 🔎 Подробный разбор модулей
+## 📚 Подробный разбор модулей
 
-Ниже — детальный план каждого модуля: что изучать, что строить, где брать материалы. Полные уроки и чек-листы — внутри файлов в [`/course`](./course).
+### 00. Fundamentals — фундамент языка
+**Что изучаем:** `go run`, `go build`, переменные, типы, zero values, control flow, массивы vs срезы, maps, структуры, методы и receiver-ы, интерфейсы (implicit), ошибки и `errors.Is/As`, `defer`, `panic`/`recover`, generics (1.18+), iterators (1.23+).
+**Бесплатные ресурсы:**
+- [A Tour of Go](https://go.dev/tour/) — официальный интерактив
+- [Effective Go](https://go.dev/doc/effective_go) — обязательно
+- [Go by Example](https://gobyexample.com/) — рецепты на каждый день
+- [Учебник Ushakov](https://ushakov-school.ru/golang) (бесплатный)
+- YouTube: [Nikolay Tuzov — Golang с нуля](https://www.youtube.com/@nikolay_tuzov)
+- Книга: [«The Go Programming Language»](https://www.gopl.io/) (Donovan, Kernighan) — главы 1–7
+**Проект модуля:** CLI-утилита `gocount` — считает строки/слова/байты в файлах (аналог `wc`).
 
-### Модуль 0. Фундамент 🟢 (2–3 недели)
+### 01. Tooling & Modules — экосистема
+**Что изучаем:** `go mod init/tidy/why/graph`, `go work`, `replace`, vendoring, версионирование (semver), `golangci-lint`, `gofumpt`, `goimports`, `Taskfile.yml`, `Makefile`, pre-commit hooks, GitHub Actions для Go.
+**Бесплатные ресурсы:**
+- [Go Modules Reference](https://go.dev/ref/mod)
+- [golangci-lint docs](https://golangci-lint.run/)
+- [Task — современный Make](https://taskfile.dev/)
+- Статья: [Go Workspaces by Robert Griesemer](https://go.dev/blog/get-familiar-with-workspaces)
+**Проект модуля:** монорепо с 2 модулями, единый `Taskfile`, CI на GitHub Actions с линтером и тестами.
 
-**Что изучаем.** Установка Go и tooling (`go env`, GOPATH/GOROOT/GOBIN, goimports, golangci-lint, delve), терминал и Unix-философия (grep/sed/awk/find/xargs/tmux), Git глубоко (объектная модель, rebase, конфликты, GPG/sigstore), как устроен компьютер (CPU/кэши/RAM/процессы/потоки), как работает сеть (TCP/IP, DNS, TLS, HTTP/1.1/2/3), первая программа на Go и `go mod`, IDE + Delve + format-on-save.
+### 02. Concurrency — то, ради чего идут в Go
+**Что изучаем:** горутины, `go`-statement, каналы (buffered/unbuffered), `select`, `for range ch`, `close`, `sync.Mutex/RWMutex`, `sync.WaitGroup`, `sync.Once`, `sync.Pool`, `atomic`, `context.Context` (cancel/timeout/value), race detector (`go run -race`), паттерны: worker pool, fan-in/fan-out, pipeline, semaphore, errgroup.
+**Бесплатные ресурсы:**
+- [Go Concurrency Patterns (Pike)](https://go.dev/blog/pipelines)
+- Книга: [«Concurrency in Go» Katherine Cox-Buday](https://katherine.cox-buday.com/concurrency-in-go/) (главы в открытом доступе)
+- [Курс Concurrency in Go — Ardan Labs](https://github.com/ardanlabs/gotraining) (open-source)
+- YouTube: [Бакалавр Computer Science — конкурентность](https://www.youtube.com/@bbc_ru)
+**Проект модуля:** многопоточный краулер сайтов с rate limiting, retries и graceful shutdown.
 
-**Бесплатные ресурсы.** [A Tour of Go](https://go.dev/tour/), [Go by Example](https://gobyexample.com/), [How to Write Go Code](https://go.dev/doc/code), [The Missing Semester (MIT)](https://missing.csail.mit.edu/), [Pro Git на русском](https://git-scm.com/book/ru/v2), [Learn Git Branching](https://learngitbranching.js.org/?locale=ru_RU), [Latency Numbers Every Programmer Should Know](https://gist.github.com/jboner/2841832), YouTube-канал [JustForFunc](https://www.youtube.com/c/JustForFunc).
+### 03. Standard Library — золото стандартной библиотеки
+**Что изучаем:** `io.Reader/Writer` идиомы, `bufio`, `os` (env, signals, fs), `net/http` сервер и клиент, `encoding/json` + кастомные `MarshalJSON`, `encoding/xml`, `time` (часовые пояса, monotonic), `errors` (wrap, unwrap), `log/slog` (1.21+) — structured logging.
+**Бесплатные ресурсы:**
+- [pkg.go.dev/std](https://pkg.go.dev/std) — официальная документация
+- [Go Blog — slog tutorial](https://go.dev/blog/slog)
+- Статьи: [Dave Cheney — practical Go](https://dave.cheney.net/practical-go)
+**Проект модуля:** HTTP-сервис-агрегатор RSS с structured logging через `slog`.
 
-**Проект модуля.** CLI-утилита `gotodo` — менеджер задач в терминале с JSON-хранилищем, цветным выводом, флагами priority/due/filter, установкой через `go install`, чистым `golangci-lint`.
+### 04. Testing — без тестов в прод не пускаем
+**Что изучаем:** `testing.T`, table-driven tests, subtests, `t.Parallel()`, fuzzing (`testing.F`), benchmarking (`testing.B`), coverage, golden files, моки (gomock, mockery, testify/mock), `httptest`, `iotest`, integration через [testcontainers-go](https://golang.testcontainers.org/).
+**Бесплатные ресурсы:**
+- [Go Testing — официальный туториал](https://go.dev/doc/tutorial/add-a-test)
+- [Learn Go with Tests](https://quii.gitbook.io/learn-go-with-tests/) — лучший бесплатный курс TDD на Go
+- [Go Fuzzing](https://go.dev/security/fuzz/)
+**Проект модуля:** библиотека для парсинга промокодов с 95%+ покрытием, fuzz-тестами и benchmark-ами.
+
+### 05. Web & API — REST и HTTP-сервисы
+**Что изучаем:** `net/http` + ServeMux (1.22+), роутеры [chi](https://github.com/go-chi/chi), [gin](https://gin-gonic.com/), [echo](https://echo.labstack.com/), middleware (auth, recover, rate limit, CORS), валидация ([go-playground/validator](https://github.com/go-playground/validator)), OpenAPI 3 ([oapi-codegen](https://github.com/oapi-codegen/oapi-codegen)), `huma`, `fiber`, graceful shutdown, server-timing, SSE и WebSocket.
+**Бесплатные ресурсы:**
+- [Alex Edwards — Let's Go (book, бесплатные главы)](https://lets-go.alexedwards.net/sample/)
+- [chi docs](https://go-chi.io/)
+- [OpenAPI Generator for Go](https://openapi-generator.tech/docs/generators/go/)
+**Проект модуля:** REST API `linkshrt` (аналог bit.ly) с auth, rate-limit, OpenAPI и Docker.
+
+### 06. Databases — данные навсегда
+**Что изучаем:** `database/sql`, [pgx](https://github.com/jackc/pgx), [sqlc](https://sqlc.dev/), [squirrel](https://github.com/Masterminds/squirrel), миграции ([goose](https://github.com/pressly/goose), [atlas](https://atlasgo.io/)), индексы, `EXPLAIN ANALYZE`, транзакции и уровни изоляции, connection pool, [go-redis](https://github.com/redis/go-redis), кэширование (cache-aside, write-through), [ent](https://entgo.io/) и [bun](https://bun.uptrace.dev/).
+**Бесплатные ресурсы:**
+- [Use the Database Slow Query Log](https://wiki.postgresql.org/wiki/Logging_Difficult_Queries)
+- [pgx tutorial](https://github.com/jackc/pgx/wiki)
+- [PostgreSQL для разработчика — Postgres Pro (RU)](https://postgrespro.ru/education/books)
+**Проект модуля:** сервис подписок с PostgreSQL (sqlc) + Redis (idempotency keys) + миграциями.
+
+### 07. gRPC & Protobuf — межсервисные коммуникации
+**Что изучаем:** protobuf 3, `buf` CLI, кодогенерация (`protoc-gen-go`, `protoc-gen-go-grpc`), unary/server-stream/client-stream/bidi-stream, deadlines, interceptors, [grpc-gateway](https://grpc-ecosystem.github.io/grpc-gateway/), reflection, [connect-go](https://connectrpc.com/), [twirp](https://twitchtv.github.io/twirp/).
+**Бесплатные ресурсы:**
+- [gRPC Basics — официальный туториал](https://grpc.io/docs/languages/go/basics/)
+- [Buf docs](https://buf.build/docs/introduction)
+- YouTube: [gRPC + Go — TechSchool](https://www.youtube.com/playlist?list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
+**Проект модуля:** микросервис `user-svc` + `order-svc` через gRPC streaming, REST-фасад через gRPC-Gateway.
+
+### 08. Architecture — пишем код, который не стыдно
+**Что изучаем:** Clean Architecture, Hexagonal (ports & adapters), Vertical Slice, DDD-lite (entity, value object, repository, aggregate), DI без магии ([wire](https://github.com/google/wire), [fx](https://github.com/uber-go/fx)), функциональные опции, error wrapping стратегии, layered конфиг ([viper](https://github.com/spf13/viper), [koanf](https://github.com/knadh/koanf)).
+**Бесплатные ресурсы:**
+- [go-clean-template — Evrone](https://github.com/evrone/go-clean-template)
+- [Standard Go Project Layout](https://github.com/golang-standards/project-layout) (с оговорками)
+- Статьи: [Three Dots Labs — Wild Workouts](https://threedots.tech/post/introducing-clean-architecture/)
+**Проект модуля:** рефакторинг проекта модуля 05 в чистую архитектуру + DI через wire.
+
+### 09. Observability — без неё в проде слепой
+**Что изучаем:** [OpenTelemetry для Go](https://opentelemetry.io/docs/languages/go/), structured logging (`slog` + correlation id), traces (Jaeger/Tempo), metrics (Prometheus), `pprof` через HTTP, `expvar`, dashboards в Grafana, алёрты в Alertmanager, log levels стратегия.
+**Бесплатные ресурсы:**
+- [OpenTelemetry Go SDK docs](https://opentelemetry.io/docs/languages/go/getting-started/)
+- [Prometheus client_golang examples](https://github.com/prometheus/client_golang/tree/main/examples)
+- [Grafana University (бесплатно)](https://grafana.com/about/team/grafanauniversity/)
+**Проект модуля:** добавить полную observability к сервисам из 07: traces + metrics + structured logs + Grafana дашборд.
+
+### 10. Performance — Go быстрый, но не сам собой
+**Что изучаем:** `go test -bench`, `benchstat`, `pprof` (cpu, mem, goroutine, mutex, block), escape analysis (`-gcflags='-m'`), GOGC и GOMEMLIMIT (1.19+), `sync.Pool`, lock-free структуры, false sharing, prealloc slice/map, string interning, [PGO](https://go.dev/doc/pgo) (Profile-Guided Optimization).
+**Бесплатные ресурсы:**
+- [High Performance Go Workshop — Dave Cheney](https://dave.cheney.net/high-performance-go-workshop/dotgo-paris.html)
+- [Go Performance Tuning — Bartosz Mika](https://github.com/dgryski/go-perfbook)
+- [pprof tutorial — Julia Evans](https://jvns.ca/blog/2017/09/24/profiling-go-with-pprof/)
+**Проект модуля:** оптимизировать REST API из модуля 05 — поднять RPS в 5–10 раз через профилирование.
+
+### 11. Security — безопасность в Go
+**Что изучаем:** OWASP Top 10 в контексте Go, JWT (RS256 vs HS256), OAuth2 / OIDC, TLS (mTLS), `crypto/*`, secrets management (Vault, SOPS), supply chain attacks, [govulncheck](https://go.dev/blog/govulncheck), [gosec](https://github.com/securego/gosec), CSRF, SQL injection, SSRF, RCE через unsafe deserialization.
+**Бесплатные ресурсы:**
+- [OWASP Go Secure Coding Practices](https://github.com/OWASP/Go-SCP)
+- [Go Security Best Practices — Snyk](https://snyk.io/learn/go-security/)
+- [govulncheck blog post](https://go.dev/blog/govulncheck)
+**Проект модуля:** аудит безопасности проекта 05/08, внедрение JWT + mTLS между сервисами + govulncheck в CI.
+
+### 12. Cloud & DevOps — куда деплоиться
+**Что изучаем:** multi-stage `Dockerfile` (distroless), Docker Compose, Kubernetes (Pod/Deployment/Service/Ingress/ConfigMap/Secret), Helm charts, Kustomize, ArgoCD, Terraform для облака (AWS/GCP/Yandex), GitOps workflow, kubectl мастерство.
+**Бесплатные ресурсы:**
+- [Kubernetes Up & Running — free chapters](https://www.oreilly.com/library/view/kubernetes-up-and/9781098110192/)
+- [Learn Kubernetes the Hard Way (Kelsey Hightower)](https://github.com/kelseyhightower/kubernetes-the-hard-way)
+- [Helm docs](https://helm.sh/docs/)
+- YouTube: [TechWorld with Nana — Kubernetes](https://www.youtube.com/@TechWorldwithNana)
+**Проект модуля:** деплой 3-сервисов из модуля 09 в Kubernetes (kind/minikube) + Helm + ArgoCD.
+
+### 13. Messaging — асинхронные коммуникации
+**Что изучаем:** [Kafka](https://github.com/twmb/franz-go) (партиции, оффсеты, consumer groups, exactly-once), [NATS](https://nats.io/) (Core, JetStream, KV), RabbitMQ, outbox pattern, idempotency keys, retries с backoff, dead letter queue, sagas (orchestration vs choreography), event-driven архитектура.
+**Бесплатные ресурсы:**
+- [Kafka: The Definitive Guide — free O'Reilly](https://www.confluent.io/resources/kafka-the-definitive-guide-v2/)
+- [NATS by Example](https://natsbyexample.com/)
+- Watermill — [фреймворк для event-driven Go](https://watermill.io/)
+**Проект модуля:** order-saga через NATS JetStream + outbox table в PostgreSQL.
+
+### 14. Distributed Systems — теория и боль
+**Что изучаем:** CAP, PACELC, consistency models (linearizable, sequential, eventual), Raft / Paxos (на уровне понимания), distributed locks ([etcd](https://etcd.io/), Redis Redlock), leader election, vector clocks, event sourcing + CQRS, Two-Generals, Byzantine fault tolerance (basics).
+**Бесплатные ресурсы:**
+- Книга [«Designing Data-Intensive Applications»](https://dataintensive.net/) (Kleppmann) — обязательно
+- [MIT 6.824 Distributed Systems](https://pdos.csail.mit.edu/6.824/) — лекции бесплатно
+- [The Raft paper](https://raft.github.io/raft.pdf) + [interactive visualisation](https://raft.github.io/)
+**Проект модуля:** свой mini key-value store с Raft (на базе [hashicorp/raft](https://github.com/hashicorp/raft)) на 3 нодах.
+
+### 15. Microservices — оркестрация и устойчивость
+**Что изучаем:** service mesh (Istio, Linkerd), API Gateway (KrakenD, Kong), circuit breaker ([sony/gobreaker](https://github.com/sony/gobreaker)), retries, timeouts, bulkhead, [resilience-go](https://github.com/slok/goresilience), feature flags (Unleash), blue-green / canary deploys, contract testing (Pact).
+**Бесплатные ресурсы:**
+- [microservices.io patterns — Chris Richardson](https://microservices.io/patterns/)
+- [Istio docs](https://istio.io/latest/docs/)
+- [Release It! — Michael Nygard](https://pragprog.com/titles/mnee2/release-it-second-edition/) (главы в открытом доступе)
+**Проект модуля:** добавить circuit breaker, retries, timeouts в проект 09; canary deploy через ArgoCD.
+
+### 16. System Design — как собеседуют на Senior
+**Что изучаем:** capacity planning (back-of-envelope), CDN, шардирование, репликация (sync vs async), кэширование (LRU, LFU, TinyLFU), очереди, consistent hashing, gossip protocols, geo-replication, multi-tenancy, мульти-регион, RTO/RPO.
+**Бесплатные ресурсы:**
+- [System Design Primer](https://github.com/donnemartin/system-design-primer) — must-have
+- [ByteByteGo (бесплатные посты)](https://blog.bytebytego.com/)
+- YouTube: [Hussein Nasser](https://www.youtube.com/@hnasser)
+**Проект модуля:** письменный системный дизайн Twitter-clone на Go (можно как ADR-документ в репо).
+
+### 17. Advanced Topics — внутрь Go
+**Что изучаем:** Go runtime (GMP scheduler), garbage collector (tri-color, write barriers), `unsafe` (когда оправдано), `cgo` (и почему лучше без него), [tinygo](https://tinygo.org/) для Wasm и embedded, eBPF на Go ([cilium/ebpf](https://github.com/cilium/ebpf)), `plugin`, [Wazero](https://wazero.io/) для запуска Wasm на сервере.
+**Бесплатные ресурсы:**
+- [Go internals — Bartosz Mika](https://github.com/teh-cmc/go-internals)
+- [Go scheduler — Ardan Labs deep dive](https://www.ardanlabs.com/blog/2018/08/scheduling-in-go-part1.html)
+- [eBPF Tutorial — Cilium](https://docs.cilium.io/en/stable/bpf/)
+**Проект модуля:** eBPF-программа на Go, считающая TCP-соединения по PID.
+
+### 18. AI & Data Engineering — Go в 2026 ещё и про AI
+**Что изучаем:** [Ollama](https://ollama.com/) клиент на Go, [langchaingo](https://github.com/tmc/langchaingo), RAG (Retrieval Augmented Generation), vector databases (pgvector, Qdrant, Weaviate), streaming-обработка ([benthos](https://www.benthos.dev/)), embeddings, function calling, MCP-серверы на Go.
+**Бесплатные ресурсы:**
+- [langchaingo examples](https://github.com/tmc/langchaingo/tree/main/examples)
+- [Building LLM apps with Go — Eli Bendersky](https://eli.thegreenplace.net/tag/golang)
+- [Qdrant Go SDK quickstart](https://qdrant.tech/documentation/quick-start/)
+**Проект модуля:** RAG-чат-бот по документации Go (pgvector + Ollama + langchaingo + gRPC API).
 
 ---
 
-### Модуль 1. Синтаксис и основы Go 🟢 (3–4 недели)
-
-**Что изучаем.** Типы данных и zero values, iota и Stringer, управляющие конструкции и `defer`, функции / замыкания / variadic, functional options, методы (value vs pointer receiver), маленькие интерфейсы, mental model слайса (ptr/len/cap), map, указатели и семантика, идиоматичные ошибки (`errors.Is/As`, wrap через `%w`), организация пакетов и `internal/`.
-
-**Бесплатные ресурсы.** [Effective Go](https://go.dev/doc/effective_go), [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments), [Google Go Style Guide](https://google.github.io/styleguide/go/), [100 Go Mistakes](https://100go.co/), статьи [Dave Cheney "Practical Go"](https://dave.cheney.net/practical-go) и "Don't just check errors, handle them gracefully", блог [Go Slices: usage and internals](https://go.dev/blog/slices-intro).
-
-**Проект модуля.** `gowiki` — статический генератор сайтов на Go: Markdown + front matter + `html/template` + CLI с подкомандами + 80% покрытие тестами + структура `cmd/`, `internal/`, `pkg/`.
-
----
-
-### Модуль 2. Глубокий Go 🟡 (4–6 недель)
-
-**Что изучаем.** Интерфейсы и nil-interface gotcha, дизайн «accept interfaces, return structs», композиция через embedding, generics (constraints, когда уместны и когда вредны), reflection и её цена, escape analysis (`go build -gcflags="-m"`), стек vs куча, GC на высоком уровне (tri-color marking, write barrier, GOGC, GOMEMLIMIT).
-
-**Бесплатные ресурсы.** [Ardan Labs Ultimate Go (Bill Kennedy)](https://www.ardanlabs.com/training/ultimate-go/) — лекции на YouTube бесплатно, Go blog [про GC](https://go.dev/blog/ismmkeynote), статьи Damian Gryski про escape analysis.
-
-**Проект модуля.** Расширяемый калькулятор через интерфейсы + набор дженерик-контейнеров `Stack[T]`/`Queue[T]`/`Set[T]` с тестами 80%+ и проверенным escape analysis.
-
----
-
-### Модуль 3. Конкурентность 🟡 (3–4 недели)
-
-**Что изучаем.** Горутины и их цена, планировщик GMP с work-stealing и preemption, каналы (буферизованные / небуферизованные / направленные), `select` и таймауты, пакет `sync` (Mutex/RWMutex/WaitGroup/Once/Cond/Pool), `sync/atomic`, `context.Context` (Cancel/Timeout/Deadline/Value), паттерны (worker pool, fan-in/fan-out, pipeline, semaphore, errgroup, rate limiter), race detector.
-
-**Бесплатные ресурсы.** [Go Concurrency Patterns (Rob Pike)](https://www.youtube.com/watch?v=f6kdp27TYZs), [Advanced Go Concurrency Patterns (Sameer Ajmani)](https://www.youtube.com/watch?v=QDDwwePbDtw), [Go blog про context](https://go.dev/blog/context).
-
-**Проект модуля.** Многопоточный web crawler с лимитом параллелизма, отменой через `context`, graceful shutdown и чистым `go test -race`.
-
----
-
-### Модуль 4. Стандартная библиотека 🟢 (3 недели)
-
-**Что изучаем.** `net/http` клиент (Transport, connection pooling, retry с backoff) и сервер (новый `ServeMux` в Go 1.22 с роутингом по методу и path-params), `encoding/json` (теги, RawMessage, кастомные Marshal/Unmarshal, streaming), `io`/`bufio`/`os`, `time` (монотонные часы, Ticker/Timer, таймзоны), `log/slog` (Go 1.21+, JSON-логи, атрибуты), `flag`, `os/signal`, graceful shutdown.
-
-**Бесплатные ресурсы.** [Go blog про slog](https://go.dev/blog/slog), [Go 1.22 release notes](https://go.dev/doc/go1.22), [Standard library docs](https://pkg.go.dev/std).
-
-**Проект модуля.** `httpcheck` — параллельный HTTP-чекер URL'ов на чистой stdlib (нулевые зависимости), JSON-логи, Ctrl+C → graceful shutdown.
-
----
-
-### Модуль 5. Базы данных 🟡 (3–4 недели)
-
-**Что изучаем.** SQL уровня JOIN/GROUP BY/CTE/window functions, EXPLAIN ANALYZE, индексы (B-tree, Hash, GIN), нормальные формы, `database/sql` + `pgx`, транзакции и уровни изоляции, миграции (`goose`/`golang-migrate`), query builder (`squirrel`) и codegen через `sqlc`, ORM (`gorm`) с пониманием минусов, Redis (типы данных, кэш, TTL, distributed locks).
-
-**Бесплатные ресурсы.** [PostgreSQL Tutorial](https://www.postgresqltutorial.com/), [Use The Index, Luke!](https://use-the-index-luke.com/), [pgx docs](https://github.com/jackc/pgx), [sqlc docs](https://docs.sqlc.dev/), [Redis University](https://university.redis.com/).
-
-**Проект модуля.** REST-сервис «Библиотека книг» с full-text поиском в Postgres, cursor-пагинацией, кэшем в Redis, миграциями и решением N+1.
-
----
-
-### Модуль 6. Web и API 🟡 (4–6 недель)
-
-**Что изучаем.** Современный `ServeMux`, роутеры (chi как идиоматичный, echo, gin), middleware (RequestID, Logging, Recover, CORS, rate limit), JWT (access + refresh, ротация, PKCE), хеширование паролей (argon2id / bcrypt), валидация (`go-playground/validator`), gRPC + Protocol Buffers (unary / streaming / interceptors / deadlines), WebSocket (hub-паттерн, ping/pong), OpenAPI/Swagger (`swaggo/swag`, `oapi-codegen`).
-
-**Бесплатные ресурсы.** [chi docs](https://github.com/go-chi/chi), [gRPC Go Quick Start](https://grpc.io/docs/languages/go/quickstart/), [JWT Handbook](https://auth0.com/resources/ebooks/jwt-handbook), [OWASP Authentication Cheatsheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html).
-
-**Проект модуля.** Мини-соцсеть: REST + gRPC + WebSocket-чат, JWT с ротацией, Swagger, валидация на всех эндпоинтах.
-
----
-
-### Модуль 7. Тестирование 🟢 (2–3 недели)
-
-**Что изучаем.** `testing` + table-driven + subtests + `t.Parallel` + `t.Helper` + `t.Cleanup` + golden files, `testify` (assert / require / suite), моки (`gomock`, `mockery`), интеграционные тесты через `testcontainers-go`, `httptest`, бенчмарки + pprof + `benchstat`, fuzzing (Go 1.18+), покрытие.
-
-**Бесплатные ресурсы.** [Go testing docs](https://pkg.go.dev/testing), [Advanced Testing in Go (Mitchell Hashimoto)](https://www.youtube.com/watch?v=8hQG7QlcLBk), [testcontainers-go docs](https://golang.testcontainers.org/).
-
-**Проект модуля.** Полностью покрыть библиотеку книг из модуля 5: unit ≥70%, 5 интеграционных тестов с testcontainers, 2–3 бенчмарка, 1 fuzz-тест.
-
----
-
-### Модуль 8. Микросервисы и сети 🟠 (6–8 недель)
-
-**Что изучаем.** Когда микросервисы нужны (а когда монолит), брокеры (Kafka — партиции/consumer groups/гарантии EOS, RabbitMQ — exchange/routing key, NATS JetStream), Saga (choreography vs orchestration), Outbox-pattern, CQRS и Event Sourcing с трезвой оценкой, устойчивость (Circuit Breaker через `sony/gobreaker`, retry с jitter, bulkhead, idempotency keys), service discovery + API Gateway, gRPC interceptors, distributed tracing через OpenTelemetry + Jaeger.
-
-**Бесплатные ресурсы.** [microservices.io (Chris Richardson)](https://microservices.io/), [Kafka: The Definitive Guide (Confluent, бесплатно)](https://www.confluent.io/resources/kafka-the-definitive-guide/), [OpenTelemetry Go docs](https://opentelemetry.io/docs/languages/go/).
-
-**Проект модуля.** Мини-маркетплейс: 4 сервиса (users / catalog / orders / notifier), gRPC между сервисами + Kafka для событий, реализованные Saga + Outbox, сквозной distributed tracing.
-
----
-
-### Модуль 9. DevOps минимум 🟠 (3–4 недели)
-
-**Что изучаем.** Docker (multi-stage, distroless, scratch, `CGO_ENABLED=0`), docker-compose с healthchecks, Kubernetes базово (Pod/Deployment/Service/Ingress/ConfigMap/Secret), Helm, CI/CD на GitHub Actions, Prometheus + `client_golang` + 4 золотых сигнала, Grafana, structured JSON-логи с корреляцией trace_id.
-
-**Бесплатные ресурсы.** [Docker docs](https://docs.docker.com/), [Kubernetes Basics tutorial](https://kubernetes.io/docs/tutorials/kubernetes-basics/), [Killercoda K8s playground](https://killercoda.com/), [Helm docs](https://helm.sh/docs/), [Prometheus docs](https://prometheus.io/docs/introduction/overview/), [Grafana tutorials](https://grafana.com/tutorials/).
-
-**Проект модуля.** Маркетплейс из модуля 8 → multi-stage Docker, docker-compose локально, развёртывание в kind/minikube через Helm, CI lint→test→build→push в ghcr.io, метрики Prometheus + дашборд Grafana.
-
----
-
-### Модуль 10. Архитектура и паттерны 🔴 (4–6 недель)
-
-**Что изучаем.** SOLID без слепого переноса из Java, Clean Architecture (слои и правило зависимостей), Hexagonal/Ports & Adapters, DDD-минимум (bounded context, ubiquitous language, aggregate roots, value objects, domain events), event-driven и eventual consistency, идиоматичные паттерны Go (functional options, builder, decorator через middleware, strategy через интерфейс), антипаттерны (god package, anemic domain, преждевременная абстракция, оверинжиниринг).
-
-**Бесплатные ресурсы.** [The Clean Architecture (Uncle Bob)](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), [DDD Reference (Eric Evans, бесплатный PDF)](https://www.domainlanguage.com/ddd/reference/), статьи [threedots.tech про Go и DDD](https://threedots.tech/), [Go Patterns](https://github.com/tmrts/go-patterns).
-
-**Проект модуля.** Переписать маркетплейс в чистой архитектуре: domain не знает про Postgres/HTTP/gRPC, репозитории — интерфейсы в domain с реализациями в infrastructure, use cases тестируются без БД.
-
----
-
-### Модуль 11. Performance и production 🔴 (3–4 недели)
-
-**Что изучаем.** pprof в деталях (CPU/heap/goroutine/block/mutex + flame graph), правильные бенчмарки + `benchstat`, GC tuning (GOGC, GOMEMLIMIT, trade-off latency/throughput), снижение аллокаций (`sync.Pool`, `strings.Builder`, преаллокация слайсов), connection pooling (`pgxpool`, `http.Transport.MaxIdleConnsPerHost`), graceful shutdown, liveness/readiness/startup probes, три кита observability.
-
-**Бесплатные ресурсы.** [Profiling Go Programs (Go blog)](https://go.dev/blog/pprof), [Go GC Guide](https://go.dev/doc/gc-guide), [High Performance Go Workshop (Dave Cheney)](https://dave.cheney.net/high-performance-go-workshop/dotgo-paris.html), [Damian Gryski "go-perfbook"](https://github.com/dgryski/go-perfbook).
-
-**Проект модуля.** Найти узкое место в своём сервисе через pprof и ускорить его минимум в 2 раза, документируя процесс «было / стало / что изменил».
-
----
-
-### Модуль 12. Подготовка к собеседованиям 🟣 (3 недели)
-
-**Что изучаем.** Внутренности Go (GMP-планировщик, GC, memory model, слайс/map/channel в runtime, defer, escape analysis), типовые задачи на собесе (Rate Limiter token/leaky bucket, Worker Pool, LRU, `sync.Map` своими руками, Pub/Sub на каналах, fan-in/fan-out, sharded concurrent map, Promise/Future), System Design по шаблону (functional → non-functional → capacity → API → data model → diagram → bottlenecks), 100–150 LeetCode Easy+Medium на Go, behavioral по STAR.
-
-**Бесплатные ресурсы.** [System Design Primer](https://github.com/donnemartin/system-design-primer), [LeetCode](https://leetcode.com/), [pramp.com](https://www.pramp.com/) (бесплатные peer-to-peer mock-интервью), [interviewing.io](https://interviewing.io/).
-
-**Цель модуля.** 100+ LeetCode решено, 5+ System Design разобрано, 5–10 mock-интервью пройдено, 5–10 behavioral-историй готовы.
-
----
-
-## 🧬 Продвинутая часть (Senior → Staff/Principal)
-
-### Модуль 13. Go Runtime & Internals 🔴 (4–6 недель)
-
-**Что изучаем.** Go Memory Model и happens-before, scheduler глубоко (sysmon, netpoller, LockOSThread, `go tool trace`), GC внутрь (tricolor + write barrier + pacer, разбор `GODEBUG=gctrace=1`), escape analysis на hot path, `unsafe`/cgo/Plan 9 assembler, reflection и generics под капотом (GC shape stenciling).
-
-**Бесплатные ресурсы.** [Go Memory Model](https://go.dev/ref/mem), [Go GC Guide](https://go.dev/doc/gc-guide), доклады Kavya Joshi, Rick Hudson и Austin Clements на YouTube, статьи Russ Cox и Dmitry Vyukov.
-
-**Проект модуля.** In-memory cache со 100k RPS и p99 < 1ms, GC pause < 1ms, с отчётом до/после по pprof heap/cpu/block/mutex.
-
----
-
-### Модуль 14. Distributed Systems 🔴 (6–8 недель)
-
-**Что изучаем.** CAP/PACELC/FLP, линеаризуемость vs serializability, time/clocks (Lamport, vector clocks, HLC, TrueTime), консенсус (Raft на уровне реализации, Multi-Paxos, EPaxos, ZAB), репликация (sync/async/leaderless, CRDT), распределённые транзакции (2PC/TCC/Saga/Outbox), idempotency и hedged requests, service discovery + LB + consistent hashing + service mesh (Envoy/Istio), streaming (Kafka EOS, NATS JetStream).
-
-**Бесплатные ресурсы.** [Martin Kleppmann "DDIA" (1 глава бесплатно)](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781491903063/), [Jepsen blog (Aphyr)](https://jepsen.io/analyses), [Raft paper](https://raft.github.io/raft.pdf), исходники [hashicorp/raft](https://github.com/hashicorp/raft) и [etcd-io/raft](https://github.com/etcd-io/raft).
-
-**Проект модуля.** Распределённое KV-хранилище с Raft-репликацией, linearizable reads, jepsen-like тестами.
-
----
-
-### Модуль 15. Observability & SRE 🔴 (3–4 недели)
-
-**Что изучаем.** Three pillars + continuous profiling, OpenTelemetry в Go end-to-end (SDK/exporters/propagators/baggage, head vs tail sampling), Prometheus уровня прода (RED/USE, native histograms, cardinality control), structured slog с trace correlation, continuous profiling (Pyroscope/Parca, eBPF), SLO/SLI/error budget + multi-window burn-rate alerts, incident response + blameless postmortem + chaos engineering.
-
-**Бесплатные ресурсы.** [Google SRE Book](https://sre.google/sre-book/table-of-contents/) и [SRE Workbook](https://sre.google/workbook/table-of-contents/), [Cindy Sridharan blog](https://copyconstruct.medium.com/), [OpenTelemetry docs](https://opentelemetry.io/docs/), [Brendan Gregg blog (eBPF, USE)](https://www.brendangregg.com/).
-
-**Проект модуля.** Полный observability-стек для микросервиса (3 SLO, runbook, chaos-эксперимент, USE+RED дашборды).
-
----
-
-### Модуль 16. Security в Go 🔴 (3–4 недели)
-
-**Что изучаем.** OWASP Top 10 в Go, gosec/govulncheck/staticcheck в CI, криптография практически (AEAD: AES-GCM/ChaCha20-Poly1305, argon2id для паролей, HMAC, EdDSA, никогда не свой алгоритм), TLS 1.3 + mTLS + PKI (step-ca, SPIFFE/SPIRE), OAuth2/OIDC/PKCE/RBAC/ABAC/ReBAC (OpenFGA/casbin), supply chain (SBOM через syft, подпись через cosign, SLSA уровни, Go checksum DB), container security (distroless/scratch, Pod Security `restricted`, Trivy, Falco), threat modeling по STRIDE + zero-trust + NetworkPolicy default-deny.
-
-**Бесплатные ресурсы.** [Filippo Valsorda blog](https://filippo.io/), [OWASP Top 10](https://owasp.org/Top10/), [SLSA framework](https://slsa.dev/), [sigstore docs](https://docs.sigstore.dev/), [NIST 800-207 Zero Trust](https://csrc.nist.gov/publications/detail/sp/800-207/final).
-
-**Проект модуля.** Secure-by-default REST с OIDC+PKCE, mTLS, argon2id, SBOM+cosign, threat model в репо.
-
----
-
-### Модуль 17. Cloud Native & K8s Operators 🔴 (4–6 недель)
-
-**Что изучаем.** Kubernetes изнутри (api-server, etcd, reconcile loop), client-go и informers (SharedIndexInformer, work queue, DeltaFIFO), проектирование CRD как API (spec/status subresource, printer columns, CEL-валидация, conversion webhooks), kubebuilder/operator-sdk + controller-runtime (predicates, owner references, финализаторы), admission webhooks (validating/mutating) + OPA/Gatekeeper/Kyverno, Helm + Kustomize + GitOps через ArgoCD/Flux, multi-cluster (Cluster API, Karmada), Knative со scale-to-zero.
-
-**Бесплатные ресурсы.** [Kubebuilder Book](https://book.kubebuilder.io/), [sample-controller](https://github.com/kubernetes/sample-controller), [Kubernetes the Hard Way (Kelsey Hightower)](https://github.com/kelseyhightower/kubernetes-the-hard-way), [controller-runtime docs](https://pkg.go.dev/sigs.k8s.io/controller-runtime).
-
-**Проект модуля.** Production-grade оператор `AppService`: CRD, идемпотентный reconciler, validating webhook, Prometheus-метрики, envtest + e2e в CI, Helm + ArgoCD.
-
----
-
-### Модуль 18. AI/ML & Data Engineering на Go 🔴 (3–4 недели)
-
-**Что изучаем.** LLM-интеграции (OpenAI/Anthropic/Ollama через SSE streaming + tool calling + retry/timeout), embeddings + vector DB (pgvector/Qdrant/Weaviate/Milvus, HNSW vs IVF, cosine vs L2), RAG-паттерны (chunking, reranking, hybrid search BM25+vector, eval: faithfulness/context recall), agents + MCP с sandbox, stream processing (Kafka/NATS/Redpanda, watermarks, windowing, EOS), OLAP на Go (ClickHouse native protocol, DuckDB, Apache Arrow, Parquet), ML inference (ONNX runtime из Go, dynamic batching, gRPC, Triton).
-
-**Бесплатные ресурсы.** [Anthropic "Building Effective Agents"](https://www.anthropic.com/research/building-effective-agents), [Eugene Yan blog про LLM в продакшене](https://eugeneyan.com/), [Tyler Akidau "Streaming 101/102"](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-101/), [Pinecone learning center](https://www.pinecone.io/learn/), [ClickHouse docs](https://clickhouse.com/docs), [ONNX runtime docs](https://onnxruntime.ai/docs/).
-
-**Проект модуля.** Production RAG-сервис на Go: streaming SSE, tool calling, eval-метрики, guardrails (PII-фильтр, prompt injection detection), A/B тест embedding-моделей.
-
----
-
-## ⏱️ Длительность по грейдам
-
-| Грейд | Срок (2–3 ч/день) | Что умеешь |
-|------|--------------------|-----------|
-| 🟢 Junior | 4–6 месяцев | CRUD API, базовая работа с БД, простые горутины, тесты, Docker |
-| 🟡 Middle | 8–12 месяцев | Архитектура сервиса, контекст, моки, профилирование, gRPC, миграции |
-| 🔴 Senior | 12–14 месяцев основной части | Дизайн систем, наставничество, production-готовность, observability, security |
-| 🟣 Staff/Principal | + продвинутая часть и реальная практика | Платформа, distributed systems, runtime internals, operators, AI/ML |
-
-> Время — ориентир. Один проходит за 12 месяцев, другой за 18. Норм оба варианта.
+## ⏱ Длительность по грейдам
+
+| Цель | Срок | Часов в неделю | Что закрываем |
+|------|------|----------------|---------------|
+| 🟢 **Junior Go** | 3–4 мес | 10–15 | Модули 00–06 |
+| 🟡 **Middle Go** | 7–9 мес | 12–18 | Модули 00–12 |
+| 🟠 **Senior Go** | 12–14 мес | 15–20 | Модули 00–16 |
+| 🔴 **Staff / Principal** | 16–18 мес | 20+ | Все 19 модулей + участие в open-source |
+
+> Это не дедлайны, а ориентиры. Кто-то проходит за 8 месяцев, кто-то за 2 года — оба варианта норма.
 
 ---
 
 ## 🧭 Как проходить курс
 
-1. Открой [Модуль 0](./course/00-fundamentals.md) и пройди его до конца, отмечая чекбоксы внутри.
-2. Для каждого модуля доводи проект до конца — незаконченный проект учит хуже законченного «плохого».
-3. После каждого проекта сверяйся с чек-пойнтом в конце модуля.
-4. Пройдя модули 0–7, иди на первые Junior-собеседования — реальный фидбэк ускоряет рост.
-5. Пройдя 0–12, ты готов к Middle/Senior. Дальше — модули 13–18 в любом порядке под свою специализацию.
-6. Не стесняйся возвращаться к ранним модулям: глубина приходит со вторым проходом.
+1. **Установите Go 1.23+** с [go.dev/dl](https://go.dev/dl/) и настройте `gopls` в редакторе.
+2. **Клонируйте репозиторий** — внутри `/course` лежат markdown-файлы по каждому модулю.
+3. **Идите по порядку** — модули зависят друг от друга. Перепрыгивать опасно.
+4. **Не смотрите видосы пассивно** — открыли видео → пишете тот же код параллельно.
+5. **Делайте проект каждого модуля** — без проекта модуль не считается пройденным.
+6. **Ведите блог-конспект** — хоть в `/notes` репозитория. Объяснил себе → понял.
+7. **Подпишитесь на [@Golang_google](https://t.me/Golang_google)** — там разбирают свежие фичи Go и вакансии.
 
-### Рекомендуемый ритм недели
+### 📆 Рекомендованный ритм недели
 
-* **5 дней** — теория + практика по уроку (1–2 часа).
-* **1 день** — проект модуля (3–4 часа подряд).
-* **1 день** — повторение и решение алгоритмов на LeetCode (1 час).
-
----
-
-## 📎 Топ бесплатных ресурсов
-
-**Основа языка.** [Tour of Go](https://go.dev/tour/) · [Go by Example](https://gobyexample.com/) · [Effective Go](https://go.dev/doc/effective_go) · [Go Code Review Comments](https://github.com/golang/go/wiki/CodeReviewComments) · [Google Go Style Guide](https://google.github.io/styleguide/go/) · [Practical Go (Dave Cheney)](https://dave.cheney.net/practical-go) · [100 Go Mistakes](https://100go.co/) · [Ardan Labs Ultimate Go (YouTube)](https://www.youtube.com/@ArdanLabs) · [JustForFunc (YouTube)](https://www.youtube.com/c/JustForFunc).
-
-**Терминал и Git.** [Missing Semester (MIT)](https://missing.csail.mit.edu/) · [Pro Git на русском](https://git-scm.com/book/ru/v2) · [Learn Git Branching](https://learngitbranching.js.org/?locale=ru_RU).
-
-**Базы данных.** [PostgreSQL Tutorial](https://www.postgresqltutorial.com/) · [Use The Index, Luke!](https://use-the-index-luke.com/) · [Redis University](https://university.redis.com/) · [sqlc docs](https://docs.sqlc.dev/).
-
-**Distributed & SRE.** [Jepsen analyses](https://jepsen.io/analyses) · [Raft paper и визуализация](https://raft.github.io/) · [Google SRE Book + Workbook](https://sre.google/books/) · [microservices.io](https://microservices.io/).
-
-**Observability.** [OpenTelemetry docs](https://opentelemetry.io/docs/) · [Prometheus docs](https://prometheus.io/docs/introduction/overview/) · [Grafana tutorials](https://grafana.com/tutorials/) · [Brendan Gregg blog](https://www.brendangregg.com/).
-
-**Security.** [Filippo Valsorda blog](https://filippo.io/) · [OWASP Top 10](https://owasp.org/Top10/) · [SLSA framework](https://slsa.dev/) · [sigstore docs](https://docs.sigstore.dev/).
-
-**Kubernetes.** [Kubernetes Basics](https://kubernetes.io/docs/tutorials/kubernetes-basics/) · [Kubebuilder Book](https://book.kubebuilder.io/) · [Kubernetes the Hard Way](https://github.com/kelseyhightower/kubernetes-the-hard-way) · [Killercoda playground](https://killercoda.com/).
-
-**Собеседования.** [LeetCode](https://leetcode.com/) · [System Design Primer](https://github.com/donnemartin/system-design-primer) · [pramp.com](https://www.pramp.com/) · [interviewing.io](https://interviewing.io/).
+| День | Активность | Время |
+|------|-----------|-------|
+| Пн | Теория модуля (книга/статья) | 1.5–2 ч |
+| Вт | Практика: примеры из туториала | 2 ч |
+| Ср | Теория + видос | 1.5 ч |
+| Чт | Своя имплементация | 2 ч |
+| Пт | Тесты + рефакторинг | 1.5 ч |
+| Сб | Работа над проектом модуля | 3–4 ч |
+| Вс | Чтение исходников, ревью, отдых | 1 ч |
 
 ---
 
-## 📌 3 железных правила
+## 🧪 Подробный план уроков по неделям
 
-1. **Не прыгай вперёд.** Go обманчиво простой — без фундамента упрёшься в потолок на собесах.
-2. **Пиши код сам.** Подсмотреть можно только после часа борьбы с задачей.
-3. **Делай проекты до конца.** Незаконченный проект учит хуже законченного «плохого».
+Здесь — расширенный план первого квартала (модули 00–04). Полные планы остальных модулей лежат в `/course/<NN>-*.md`.
+
+### Модуль 00 — Fundamentals (3–4 недели)
+
+#### Неделя 1 — синтаксис и типы
+- **Урок 1.1** «Hello, World правильно». Установка Go, GOPATH vs go modules, `go run`, `go build`, кросс-компиляция. Практика: написать 5 версий hello — с аргументами, env-переменными, stdin, JSON-выводом, exit codes.
+- **Урок 1.2** Скалярные типы и литералы. Числа (int vs int64), string vs []byte, rune, typed/untyped константы, `iota`. Практика: калькулятор BMI с обработкой некорректного ввода.
+- **Урок 1.3** Управление потоком. `if`, `for` (3 формы), `switch` (type switch), `goto` (зачем?). Практика: FizzBuzz, реализованный 4 разными способами; решение задачек с [Exercism Go track](https://exercism.org/tracks/go).
+- **Урок 1.4** Функции, multiple return, named returns, variadic, замыкания. Практика: набор функций для статистики ([]float64 → mean, median, mode, stdev).
+
+#### Неделя 2 — коллекции и память
+- **Урок 2.1** Массивы vs слайсы: длина, capacity, underlying array, `append` подводные камни, копирование. Практика: реализовать свой `Stack` и `Queue` на слайсах с тестами.
+- **Урок 2.2** Maps: zero value, iteration order, `delete`, конкурентный доступ. Практика: word-frequency counter, читающий большой текст и выдающий топ-N слов.
+- **Урок 2.3** Strings, runes, UTF-8, `strings.Builder`, `bytes.Buffer`. Практика: транслитерация русский ↔ латиница.
+- **Урок 2.4** Pointers, value vs pointer receivers, когда копирование вредит. Практика: бенчмарк big-struct value vs pointer.
+
+#### Неделя 3 — структуры, методы, интерфейсы
+- **Урок 3.1** `struct`, теги (json, db, validate), embedding (composition over inheritance). Практика: модель `Order` с JSON-сериализацией и валидацией.
+- **Урок 3.2** Методы, value vs pointer receivers, method sets. Практика: тип `Money` с безопасной арифметикой (без float).
+- **Урок 3.3** Интерфейсы — implicit, пустой интерфейс, type assertion, type switch, `io.Reader/Writer` идиома. Практика: написать свой `io.Reader`, который сжимает строку в gzip on-the-fly.
+- **Урок 3.4** Errors как values: `errors.New`, `fmt.Errorf("%w", ...)`, `errors.Is/As`, sentinel vs typed vs opaque ошибки. Практика: библиотека парсинга конфига с собственными типами ошибок.
+
+#### Неделя 4 — продвинутое и проект
+- **Урок 4.1** `defer`, `panic`, `recover` — паттерны и анти-паттерны.
+- **Урок 4.2** Generics (1.18+): type parameters, constraints, `comparable`, `any`. Практика: написать generic `Filter`, `Map`, `Reduce`.
+- **Урок 4.3** Iterators (1.23+) — `range over func`. Практика: переписать word-counter из 2.2 как iterator.
+- **Финальный проект:** CLI-утилита `gocount` — flags, чтение stdin/файлов, glob, бенчмарк против системного `wc`. Покрытие тестами ≥ 80%.
+
+### Модуль 01 — Tooling & Modules (1 неделя)
+- **Урок 1** `go mod` под микроскопом: версии, replace, retract, minimum version selection.
+- **Урок 2** `go work` и монорепо.
+- **Урок 3** Линтеры: `golangci-lint` конфиг для prod-проекта, `gofumpt`, `gci`, `betteralign`.
+- **Урок 4** Taskfile.yml vs Makefile; pre-commit hooks (lefthook).
+- **Урок 5** GitHub Actions workflow для Go (matrix Go-версий, cache, codecov).
+- **Финальный проект:** монорепо-шаблон со всем настроенным CI и pre-commit.
+
+### Модуль 02 — Concurrency (3–4 недели)
+
+#### Неделя 1 — основы
+- **Урок 1** Горутины: стек, цена создания, GMP-модель в общих чертах.
+- **Урок 2** Каналы: buffered vs unbuffered, направление, close, range, nil-channel паттерн.
+- **Урок 3** `select` и таймауты, default-ветка, идиома `done`-channel.
+- **Урок 4** Race detector в действии: пишем код с гонкой, ловим её `-race`.
+
+#### Неделя 2 — sync и context
+- **Урок 5** `sync.Mutex/RWMutex`: когда RW даёт выигрыш, deadlock-стратегии.
+- **Урок 6** `sync.WaitGroup`, `sync.Once`, `sync.Pool` (когда вредит).
+- **Урок 7** `atomic` и lock-free счётчики; happens-before.
+- **Урок 8** `context.Context` — cancel, timeout, deadline, value (и почему value лучше избегать).
+
+#### Неделя 3 — паттерны
+- **Урок 9** Worker pool с back-pressure.
+- **Урок 10** Pipeline + fan-in/fan-out.
+- **Урок 11** errgroup, semaphore, singleflight.
+- **Урок 12** Graceful shutdown сервиса: signal → ctx.Done → wait → exit.
+
+#### Неделя 4 — проект
+- **Финальный проект:** многопоточный web-crawler с rate limit на хост, depth limit, retries (exponential backoff), persisting в BoltDB, graceful shutdown по `SIGTERM`.
+
+### Модуль 03 — Standard Library (2–3 недели)
+- **Урок 1** `io.Reader/Writer` композиция: `TeeReader`, `MultiReader`, `LimitReader`.
+- **Урок 2** `bufio` правильно: Scanner-ловушки на длинных строках.
+- **Урок 3** `os`: env, signals, process management, file system.
+- **Урок 4** `net/http` server: ServeMux 1.22+, middleware-цепочки, server timeouts.
+- **Урок 5** `net/http` client: transport, retries, connection pooling, timeouts ВЕЗДЕ.
+- **Урок 6** `encoding/json` глубже: `json.Decoder` стримом, custom Marshal/Unmarshal, `omitempty`-нюансы.
+- **Урок 7** `time` без боли: zones, monotonic clock, mock-абстракции для тестов.
+- **Урок 8** `log/slog` (1.21+) — handlers, attributes, source, context.
+- **Финальный проект:** RSS-агрегатор с structured logging, retries, graceful shutdown.
+
+### Модуль 04 — Testing (2 недели)
+- **Урок 1** `testing.T` + subtests + table-driven (с `t.Run`).
+- **Урок 2** `t.Parallel()`, `t.Cleanup()`, helper functions.
+- **Урок 3** Моки: testify/mock, gomock, mockery — pros/cons.
+- **Урок 4** `httptest.Server` + `httptest.ResponseRecorder`.
+- **Урок 5** Integration tests через [testcontainers-go](https://golang.testcontainers.org/) (Postgres, Redis в Docker).
+- **Урок 6** Fuzzing (`testing.F`) — пишем и находим реальный баг.
+- **Урок 7** Benchmarks + `benchstat` для сравнения.
+- **Финальный проект:** библиотека парсинга промокодов с 95% coverage, fuzz-найденными багами и benchmark-сравнением 2 реализаций.
+
+> Полные планы по модулям 05–18 — в `/course/05-web.md` ... `/course/18-ai-data.md`. Каждый файл уже содержит конкретные уроки, ссылки и проектные задания.
+
+---
+
+## 🌟 Топ бесплатных ресурсов
+
+### Книги
+- **A Tour of Go** — [go.dev/tour](https://go.dev/tour)
+- **Effective Go** — [go.dev/doc/effective_go](https://go.dev/doc/effective_go)
+- **Learn Go with Tests** — [quii.gitbook.io](https://quii.gitbook.io/learn-go-with-tests/)
+- **The Go Programming Language** (главы доступны, образцы — gopl.io)
+- **Designing Data-Intensive Applications** — Kleppmann (для модулей 13–16)
+- **Concurrency in Go** — Cox-Buday (главы 1–3 в открытом доступе)
+
+### Видеокурсы и YouTube
+- [Nikolay Tuzov — Golang с нуля](https://www.youtube.com/@nikolay_tuzov) (RU)
+- [Ardan Labs Ultimate Go](https://github.com/ardanlabs/gotraining) (EN, open-source)
+- [TechSchool — Go + gRPC](https://www.youtube.com/@TechSchoolGuru)
+- [JustForFunc — Francesc Campoy](https://www.youtube.com/c/JustForFunc) (EN)
+- [Anthony GG — Go projects](https://www.youtube.com/@anthonygg_) (EN)
+
+### Практика и задачи
+- [Exercism Go track](https://exercism.org/tracks/go) — задачки с ментором
+- [Gophercises](https://gophercises.com/) — 20 пет-проектов
+- [Go by Example](https://gobyexample.com/) — рецепты
+- [Project Euler на Go](https://projecteuler.net/) — алгоритмы
+- [Advent of Code](https://adventofcode.com/) на Go
+
+### Блоги и newsletters
+- [Dave Cheney — practical Go](https://dave.cheney.net/)
+- [Eli Bendersky](https://eli.thegreenplace.net/tag/golang)
+- [Three Dots Labs](https://threedots.tech/)
+- [Go Weekly](https://golangweekly.com/)
+- Telegram: [@Golang_google](https://t.me/Golang_google) — главный русскоязычный канал
+
+### Документация и спецификации
+- [pkg.go.dev/std](https://pkg.go.dev/std) — стандартная библиотека
+- [Go Language Specification](https://go.dev/ref/spec) — обязательно к прочтению на уровне Middle+
+- [Go Memory Model](https://go.dev/ref/mem) — для модуля 02
+
+---
+
+## 📱 Главный источник новостей по Go (Telegram)
+
+Если вы пишете на Go в 2026 — подпишитесь, это сэкономит часы поиска:
+
+- 🥇 **[@Golang_google](https://t.me/Golang_google)** — главный русскоязычный канал по Go. Свежие фичи, статьи, разбор PR в Go core, вакансии Middle/Senior, мемы. Это первое, что должно быть в подписках.
+- 📂 **[Папка Telegram «Go-ресурсы»](https://t.me/addlist/MUtJEeJSxeY2YTFi)** — собранная коллекция каналов: новости, чаты по Go, вакансии, материалы для собесов. Добавляется одной кнопкой.
+
+Дополнительно стоит мониторить:
+- [Gophers Slack](https://invite.slack.golangbridge.org/) — англоязычное community №1, есть канал `#russian`
+- [r/golang](https://www.reddit.com/r/golang/) — субреддит
+- [Hacker News tag golang](https://hn.algolia.com/?q=golang)
+
+---
+
+## ⚠️ Красные флаги — типичные ошибки, которые тормозят рост
+
+Это вещи, которые на каждом ревью встречаются у Junior/Middle и тормозят повышение грейда. Если узнаёте себя — пересоберите подход.
+
+1. **«Я смотрю курс, но не пишу код».** Пассивный просмотр видосов не даёт навыка. Правило: каждые 10 минут видео → 20 минут самостоятельной практики.
+2. **Игнорирование `go vet`, `golangci-lint` и race detector.** Если запускаете тесты без `-race` — вы ловите гонки в проде, а не локально.
+3. **Прятать ошибки через `_`.** `f, _ := os.Open(...)` — классика. В Go ошибки — часть контракта функции, их обрабатывают, а не глотают.
+4. **Делать всё через интерфейсы «на всякий случай».** Интерфейс пишется на стороне потребителя и только когда есть ≥ 2 реализации. Преждевременная абстракция — главный анти-паттерн в Go.
+5. **Goroutine без `context` и без `WaitGroup`/`errgroup`.** Любая горутина, которая не умеет завершаться по сигналу — потенциальная утечка.
+6. **`panic` вместо ошибки.** `panic` — только для невосстановимых ситуаций (битый инвариант), не для «не нашёл юзера в БД».
+7. **Один большой `pkg/utils`.** Признак отсутствия архитектуры. Разносите по доменным пакетам.
+8. **Глобальные переменные и init-магия.** Усложняет тесты, делает порядок инициализации непредсказуемым.
+9. **Тесты только на happy path.** Edge cases, ошибочные пути, конкурентность — без них тест бесполезен.
+10. **«У меня нет времени на pprof / OpenTelemetry».** На Senior без observability и профилирования не берут. Закладывайте их в проект с первого коммита.
+11. **Копипаста из ChatGPT/Copilot без понимания.** AI — помощник, не автор. Если не можете объяснить каждую строку — переписывайте.
+12. **Перестали читать стандартную библиотеку.** Исходники `net/http`, `sync`, `context` — лучший учебник по идиомам Go.
+13. **Игнор `slog`, тащат `logrus`/`zap` в новые проекты.** С 1.21+ структурное логирование есть в стандартной библиотеке. Используйте.
+14. **Не знают, что такое escape analysis.** На Middle+ это базовый инструмент оптимизации.
+15. **Отказ от собеседований «пока не готов».** Собеседования — лучший фидбек. Идите даже если не готовы — узнаете, что качать.
+
+---
+
+## 🔥 3 железных правила
+
+1. **Каждый модуль закрывается проектом.** Без проекта — модуль не пройден.
+2. **Каждый проект коммитится на GitHub.** Публичный repo с README и тестами — ваш портфель.
+3. **Каждую неделю пишете заметку «что узнал»** — в `/notes` или личный блог. Это закрепляет знание.
 
 ---
 
 ## ❓ FAQ
 
-**Сколько времени реально нужно до Junior?**
-При 2–3 ч/день — 4–6 месяцев, если не пропускать проекты. Без проектов — никогда.
+**❓ Можно без опыта программирования?**  
+Можно, но будет тяжело. Сначала пройдите [CS50](https://cs50.harvard.edu/) (бесплатно) — базовый CS и алгоритмы.
 
-**Можно ли пропустить терминал и Git?**
-Нет. Сэкономишь неделю в начале, потеряешь месяцы дальше.
+**❓ Go или Rust в 2026?**  
+Go — для backend-сервисов, инфраструктуры, AI-агентов. Rust — для systems, embedded, perf-critical. Они не конкуренты. Учите Go, если цель — backend и быстро на работу.
 
-**Что если я уже знаю другой язык?**
-Модули 0–1 пройдёшь быстрее, но `пиши Python на Go` — главная ошибка переходящих. Не пропускай идиоматику и mental model.
+**❓ Нужна ли мат-база?**  
+Для модулей 00–12 — нет. Для 14 (distributed) и 16 (system design) — желательно знать теорию вероятности и базовую алгоритмику.
 
-**Нужен ли английский?**
-Базовый — да, большинство первоисточников на нём. Книги и видео можно смотреть с субтитрами.
+**❓ Сколько часов в день?**  
+Минимум 1.5 часа в будни + 3–4 часа в выходные. Меньше — потеряете темп.
 
-**Обязательно делать все 19 модулей?**
-Основная часть 0–12 — да, если идёшь до Senior. Продвинутая часть 13–18 — выборочно, под свою специализацию.
+**❓ Как искать первую работу?**  
+После модуля 06 уже можно отправлять CV на Junior. После модуля 09 — на Middle. Главное — публичные проекты на GitHub и пет-проект, который вы можете объяснить в деталях.
 
-**Что делать, если застрял?**
-Час борьбы → пять минут на решение из интернета → реализация заново без подглядывания. Если застрял на неделю — спроси в [Gophers Slack](https://invite.slack.golangbridge.org/) или на Stack Overflow.
+**❓ Что делать, если застрял?**  
+Час борьбы → пять минут на решение из интернета → реализация заново без подглядывания. Если застрял на неделю — спроси в [Gophers Slack](https://invite.slack.golangbridge.org/) или в [@Golang_google](https://t.me/Golang_google) чате.
 
 ---
 
